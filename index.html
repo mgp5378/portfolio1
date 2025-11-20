@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mallory Pierz — Resume</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Optional: Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main id="page" class="container">
+    <!-- Header -->
+    <header class="hero">
+      <div class="hero-content">
+        <h1 class="name">Mallory Pierz</h1>
+        <p class="tagline">Web Developer • Student — HTML · CSS · JavaScript · React</p>
+      </div>
+    </header>
+
+    <section class="content">
+      <!-- About + Profile -->
+      <section class="about card">
+        <div class="about-inner">
+          <img src="https://via.placeholder.com/180" alt="Profile photo" class="profile-pic" />
+          <div class="about-text">
+            <h2>About Me</h2>
+            <p id="about-me-text">
+              <!-- About text populated directly here -->
+              I’m a web development student experienced with HTML, CSS, JavaScript, and React. I built a shopping website project applying responsive layout and client-side interactivity, and I enjoy learning new technologies to improve my craft. In my free time I like reading and hiking — always looking for new ideas to bring into my projects.
+            </p>
+            <div class="cta-row">
+              <button id="download-pdf" class="btn">Download PDF</button>
+              <a href="#" class="btn btn-ghost" id="resume-link" download>Download Resume (DOCX)</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="experience card">
+        <h2>Experience</h2>
+        <ul id="experience-list" class="exp-list">
+          <li class="exp-item" data-company="CVS Health">
+            <strong class="company">CVS Health</strong>
+            <span class="role">Store Associate — Glastonbury, CT</span>
+            <small class="date">June 2025 – Present</small>
+            <p class="desc">Customer service, cashier operations, inventory management, learned POS systems and company procedures.</p>
+          </li>
+
+          <li class="exp-item" data-company="Hollister Co.">
+            <strong class="company">Hollister Co.</strong>
+            <span class="role">Brand Representative — West Hartford, CT</span>
+            <small class="date">June 2025 – Present</small>
+            <p class="desc">Sales floor customer engagement, point-of-sale experience, multi-tasking and merchandise management.</p>
+          </li>
+
+          <!-- Example additional entry -->
+          <li class="exp-item" data-company="Penn State Women's Club Ice Hockey">
+            <strong class="company">Penn State Women's Club Ice Hockey</strong>
+            <span class="role">Social Chair</span>
+            <small class="date">Aug 2024 – Present</small>
+            <p class="desc">Organized team events and communications; developed leadership and coordination skills.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Skills -->
+      <section class="skills card">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill">
+            <div class="skill-title">HTML</div>
+            <div class="progress" data-progress="95"><span></span></div>
+          </div>
+          <div class="skill">
+            <div class="skill-title">CSS</div>
+            <div class="progress" data-progress="90"><span></span></div>
+          </div>
+          <div class="skill">
+            <div class="skill-title">JavaScript</div>
+            <div class="progress" data-progress="85"><span></span></div>
+          </div>
+          <div class="skill">
+            <div class="skill-title">MySQL</div>
+            <div class="progress" data-progress="75"><span></span></div>
+          </div>
+          <div class="skill">
+            <div class="skill-title">Python</div>
+            <div class="progress" data-progress="80"><span></span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="projects card">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Shopping Website</h3>
+            <p>A responsive shopping site built with HTML, CSS, and vanilla JavaScript. Features include product listings, client-side cart functionality, and responsive design for mobile and desktop.</p>
+            <div class="tech">HTML · CSS · JavaScript</div>
+          </article>
+
+          <article class="project-card">
+            <h3>Personal Portfolio</h3>
+            <p>A portfolio site hosted on GitHub Pages showcasing projects and resume. Built with modern HTML/CSS patterns and demonstrates deployment via GitHub with source control best practices.</p>
+            <div class="tech">GitHub · HTML · CSS</div>
+          </article>
+
+          <article class="project-card">
+            <h3>Hospital Database</h3>
+            <p>A relational database built in MySQL to manage patient, physician, and procedure data. Implemented normalized schemas, queries for reporting, and sample stored procedures for common operations.</p>
+            <div class="tech">MySQL · SQL</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="contact card">
+        <h2>Contact</h2>
+        <form id="contact-form" novalidate>
+          <label>
+            <span>Name</span>
+            <input type="text" id="name" name="name" required />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" id="email" name="email" required />
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </label>
+
+          <div class="form-actions">
+            <button class="btn" type="submit">Send Message</button>
+          </div>
+
+          <div id="form-error" class="form-error" aria-live="polite"></div>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <!-- Toast container (JS will create toasts inside) -->
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+
+  <!--
+    Instructions for html2pdf.js:
+    1) Add the html2pdf library before calling any html2pdf functions.
+       You can include it by adding this script tag (CDN):
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    2) In this project, you can either:
+       - add the script tag above directly in this HTML before script.js, OR
+       - dynamically load it in script.js (script.js includes a loader fallback).
+    3) The Download PDF button uses html2pdf to convert the full page (#page) to PDF.
+  -->
+</body>
+</html>
